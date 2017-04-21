@@ -4,7 +4,7 @@
 #
 Name     : R-microbenchmark
 Version  : 1.4.2.1
-Release  : 22
+Release  : 23
 URL      : http://cran.r-project.org/src/contrib/microbenchmark_1.4-2.1.tar.gz
 Source0  : http://cran.r-project.org/src/contrib/microbenchmark_1.4-2.1.tar.gz
 Summary  : Accurate Timing Functions
@@ -30,12 +30,15 @@ lib components for the R-microbenchmark package.
 %setup -q -c -n microbenchmark
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1489128677
+export SOURCE_DATE_EPOCH=1492801698
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1489128677
+export SOURCE_DATE_EPOCH=1492801698
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -51,7 +54,7 @@ R CMD INSTALL --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} --build  -l
 export LANG=C
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
 R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library microbenchmark
 
@@ -62,6 +65,7 @@ R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/lib
 /usr/lib64/R/library/microbenchmark/INDEX
 /usr/lib64/R/library/microbenchmark/LICENSE
 /usr/lib64/R/library/microbenchmark/Meta/Rd.rds
+/usr/lib64/R/library/microbenchmark/Meta/features.rds
 /usr/lib64/R/library/microbenchmark/Meta/hsearch.rds
 /usr/lib64/R/library/microbenchmark/Meta/links.rds
 /usr/lib64/R/library/microbenchmark/Meta/nsInfo.rds
