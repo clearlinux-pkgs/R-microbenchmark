@@ -4,7 +4,7 @@
 #
 Name     : R-microbenchmark
 Version  : 1.4.6
-Release  : 52
+Release  : 53
 URL      : https://cran.r-project.org/src/contrib/microbenchmark_1.4-6.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/microbenchmark_1.4-6.tar.gz
 Summary  : Accurate Timing Functions
@@ -14,7 +14,7 @@ Requires: R-microbenchmark-lib = %{version}-%{release}
 BuildRequires : buildreq-R
 
 %description
-the execution time of R expressions.
+No detailed description available
 
 %package lib
 Summary: lib components for the R-microbenchmark package.
@@ -32,10 +32,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1539891786
+export SOURCE_DATE_EPOCH=1552776098
 
 %install
-export SOURCE_DATE_EPOCH=1539891786
+export SOURCE_DATE_EPOCH=1552776098
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -71,8 +71,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library microbenchmark|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  microbenchmark || :
 
 
 %files
@@ -97,11 +96,9 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/microbenchmark/help/paths.rds
 /usr/lib64/R/library/microbenchmark/html/00Index.html
 /usr/lib64/R/library/microbenchmark/html/R.css
-/usr/lib64/R/library/microbenchmark/libs/symbols.rds
+/usr/lib64/R/library/microbenchmark/tests/runtests.R
 /usr/lib64/R/library/microbenchmark/tests/test_regression.R
 
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/R/library/microbenchmark/libs/microbenchmark.so
-/usr/lib64/R/library/microbenchmark/libs/microbenchmark.so.avx2
-/usr/lib64/R/library/microbenchmark/libs/microbenchmark.so.avx512
