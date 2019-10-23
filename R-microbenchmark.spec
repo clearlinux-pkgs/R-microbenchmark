@@ -4,7 +4,7 @@
 #
 Name     : R-microbenchmark
 Version  : 1.4.7
-Release  : 59
+Release  : 60
 URL      : https://cran.r-project.org/src/contrib/microbenchmark_1.4-7.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/microbenchmark_1.4-7.tar.gz
 Summary  : Accurate Timing Functions
@@ -12,6 +12,7 @@ Group    : Development/Tools
 License  : BSD-2-Clause
 Requires: R-microbenchmark-lib = %{version}-%{release}
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 No detailed description available
@@ -32,10 +33,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1569616089
+export SOURCE_DATE_EPOCH=1571865260
 
 %install
-export SOURCE_DATE_EPOCH=1569616089
+export SOURCE_DATE_EPOCH=1571865260
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
