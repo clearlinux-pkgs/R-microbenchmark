@@ -7,7 +7,7 @@
 #
 Name     : R-microbenchmark
 Version  : 1.5.0
-Release  : 91
+Release  : 92
 URL      : https://cran.r-project.org/src/contrib/microbenchmark_1.5.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/microbenchmark_1.5.0.tar.gz
 Summary  : Accurate Timing Functions
